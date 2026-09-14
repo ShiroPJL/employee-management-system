@@ -6,6 +6,7 @@
     <meta name="description" content="IT Administrator integration monitoring dashboard for Arellano University - Juan Sumulong Campus." />
     <link rel="icon" type="image/png" href="../img/aulogo.png" />
     <link rel="apple-touch-icon" href="../img/aulogo.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     <title>IT Administrator Dashboard | Arellano University</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../css/admin.css" />
@@ -33,21 +34,11 @@
                     </div>
                     <div class="flex flex-wrap gap-2">
                         <button id="refresh-status" type="button" class="button-primary">
-                            <svg class="h-4 w-4" data-refresh-icon viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M20 11a8 8 0 0 0-14.9-4"></path>
-                                <path d="M4 4v5h5"></path>
-                                <path d="M4 13a8 8 0 0 0 14.9 4"></path>
-                                <path d="M20 20v-5h-5"></path>
-                            </svg>
+                            <i class="fa-solid fa-arrows-rotate h-4 w-4" data-refresh-icon aria-hidden="true"></i>
                             <span data-refresh-label>Refresh Status</span>
                         </button>
                         <button type="button" class="button-secondary" data-ui-action="view integration logs">
-                            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M5 4h14v16H5z"></path>
-                                <path d="M8.5 8h7"></path>
-                                <path d="M8.5 12h7"></path>
-                                <path d="M8.5 16h4"></path>
-                            </svg>
+                            <i class="fa-solid fa-file-lines h-4 w-4" aria-hidden="true"></i>
                             <span>View Integration Logs</span>
                         </button>
                     </div>
@@ -58,12 +49,7 @@
                 <article class="dashboard-card p-5">
                     <div class="flex items-start justify-between gap-3">
                         <span class="icon-tile bg-blue-50 text-au-blue">
-                            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <rect x="3" y="4" width="7" height="6" rx="1.3"></rect>
-                                <rect x="14" y="4" width="7" height="6" rx="1.3"></rect>
-                                <rect x="3" y="14" width="7" height="6" rx="1.3"></rect>
-                                <rect x="14" y="14" width="7" height="6" rx="1.3"></rect>
-                            </svg>
+                            <i class="fa-solid fa-network-wired h-5 w-5" aria-hidden="true"></i>
                         </span>
                         <span class="text-[10px] font-bold uppercase tracking-[0.12em] text-emerald-600">Live</span>
                     </div>
@@ -75,10 +61,7 @@
                 <article class="dashboard-card p-5">
                     <div class="flex items-start justify-between gap-3">
                         <span class="icon-tile bg-emerald-50 text-emerald-600">
-                            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="m5 12 4.5 4.5L19 7"></path>
-                                <circle cx="12" cy="12" r="9"></circle>
-                            </svg>
+                            <i class="fa-solid fa-circle-check h-5 w-5" aria-hidden="true"></i>
                         </span>
                         <span class="text-[10px] font-bold uppercase tracking-[0.12em] text-slate-400">Today</span>
                     </div>
@@ -90,11 +73,7 @@
                 <article class="dashboard-card p-5">
                     <div class="flex items-start justify-between gap-3">
                         <span class="icon-tile bg-red-50 text-au-red">
-                            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M12 3.5 21 20H3z"></path>
-                                <path d="M12 9v4"></path>
-                                <path d="M12 16.5h.01"></path>
-                            </svg>
+                            <i class="fa-solid fa-circle-exclamation h-5 w-5" aria-hidden="true"></i>
                         </span>
                         <span class="text-[10px] font-bold uppercase tracking-[0.12em] text-red-600">Action</span>
                     </div>
@@ -106,10 +85,7 @@
                 <article class="dashboard-card p-5">
                     <div class="flex items-start justify-between gap-3">
                         <span class="icon-tile bg-amber-50 text-amber-600">
-                            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <circle cx="12" cy="12" r="8.5"></circle>
-                                <path d="M12 7v5l3.5 2"></path>
-                            </svg>
+                            <i class="fa-solid fa-clock h-5 w-5" aria-hidden="true"></i>
                         </span>
                         <span class="text-[10px] font-bold uppercase tracking-[0.12em] text-amber-600">Queue</span>
                     </div>
@@ -121,12 +97,7 @@
                 <article class="dashboard-card p-5">
                     <div class="flex items-start justify-between gap-3">
                         <span class="icon-tile bg-orange-50 text-orange-600">
-                            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M12 3.5 21 20H3z"></path>
-                                <path d="M8 16.5h8"></path>
-                                <path d="M9.5 13h5"></path>
-                                <path d="M11 9.5h2"></path>
-                            </svg>
+                            <i class="fa-solid fa-triangle-exclamation h-5 w-5" aria-hidden="true"></i>
                         </span>
                         <span class="text-[10px] font-bold uppercase tracking-[0.12em] text-orange-600">Open</span>
                     </div>
@@ -138,12 +109,7 @@
                 <article class="dashboard-card p-5">
                     <div class="flex items-start justify-between gap-3">
                         <span class="icon-tile bg-violet-50 text-violet-600">
-                            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M16 20v-1.5a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4V20"></path>
-                                <circle cx="9.5" cy="7" r="3.5"></circle>
-                                <path d="M16 4.5a3.5 3.5 0 0 1 0 6.8"></path>
-                                <path d="M21 20v-1.5a4 4 0 0 0-3-3.85"></path>
-                            </svg>
+                            <i class="fa-solid fa-users h-5 w-5" aria-hidden="true"></i>
                         </span>
                         <span class="text-[10px] font-bold uppercase tracking-[0.12em] text-violet-600">Active</span>
                     </div>
@@ -158,9 +124,7 @@
                     <div>
                         <div class="flex items-center gap-2">
                             <span class="grid h-9 w-9 place-items-center rounded-xl bg-blue-50 text-au-blue">
-                                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <path d="M4 12h3l2-6 4.5 12 2-6H20"></path>
-                                </svg>
+                                <i class="fa-solid fa-chart-line h-5 w-5" aria-hidden="true"></i>
                             </span>
                             <div>
                                 <h2 id="integration-health-title" class="text-base font-extrabold text-au-navy">Integration Health</h2>
@@ -185,7 +149,7 @@
                 <div class="divide-y divide-slate-100">
                     <div id="hrps-integration" class="grid gap-4 px-5 py-4 lg:grid-cols-[minmax(14rem,1.5fr)_minmax(12rem,1fr)_auto_minmax(8rem,.8fr)_auto] lg:items-center lg:px-6" data-health-row>
                         <div class="flex items-center gap-3">
-                            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-blue-50 text-xs font-extrabold text-au-blue">HR</span>
+                            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-blue-50 text-au-blue"><i class="fa-solid fa-building h-4 w-4" aria-hidden="true"></i></span>
                             <div class="min-w-0">
                                 <p class="text-sm font-extrabold text-slate-700">HRPS</p>
                                 <p class="mt-0.5 text-xs font-medium text-slate-400">Official employee information source</p>
@@ -194,12 +158,12 @@
                         <div class="text-xs font-medium text-slate-500"><span class="mb-1 block text-[10px] font-bold uppercase tracking-[0.1em] text-slate-400 lg:hidden">Purpose</span>Employee Master Data</div>
                         <div><span class="mb-1 block text-[10px] font-bold uppercase tracking-[0.1em] text-slate-400 lg:hidden">Status</span><span class="status-badge status-online"><span class="status-dot status-dot-online"></span>Online</span></div>
                         <div class="text-xs font-semibold text-slate-600"><span class="mb-1 block text-[10px] font-bold uppercase tracking-[0.1em] text-slate-400 lg:hidden">Last sync</span>2 minutes ago</div>
-                        <a class="text-xs font-bold text-au-blue transition hover:text-au-navy lg:text-right" href="#hrps-integration">View details <span aria-hidden="true">→</span></a>
+                        <a class="text-xs font-bold text-au-blue transition hover:text-au-navy lg:text-right" href="#hrps-integration">View details <i class="fa-solid fa-arrow-right ml-1" aria-hidden="true"></i></a>
                     </div>
 
                     <div id="bundy-etl" class="grid gap-4 px-5 py-4 lg:grid-cols-[minmax(14rem,1.5fr)_minmax(12rem,1fr)_auto_minmax(8rem,.8fr)_auto] lg:items-center lg:px-6" data-health-row>
                         <div class="flex items-center gap-3">
-                            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-violet-50 text-xs font-extrabold text-violet-600">BE</span>
+                            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-violet-50 text-violet-600"><i class="fa-solid fa-clock h-4 w-4" aria-hidden="true"></i></span>
                             <div class="min-w-0">
                                 <p class="text-sm font-extrabold text-slate-700">Bundy / Biometric ETL</p>
                                 <p class="mt-0.5 text-xs font-medium text-slate-400">Attendance source ingestion</p>
@@ -208,12 +172,12 @@
                         <div class="text-xs font-medium text-slate-500"><span class="mb-1 block text-[10px] font-bold uppercase tracking-[0.1em] text-slate-400 lg:hidden">Purpose</span>Attendance Log Import</div>
                         <div><span class="mb-1 block text-[10px] font-bold uppercase tracking-[0.1em] text-slate-400 lg:hidden">Status</span><span class="status-badge status-online"><span class="status-dot status-dot-online"></span>Online</span></div>
                         <div class="text-xs font-semibold text-slate-600"><span class="mb-1 block text-[10px] font-bold uppercase tracking-[0.1em] text-slate-400 lg:hidden">Last sync</span>5 minutes ago</div>
-                        <a class="text-xs font-bold text-au-blue transition hover:text-au-navy lg:text-right" href="#bundy-etl">View details <span aria-hidden="true">→</span></a>
+                        <a class="text-xs font-bold text-au-blue transition hover:text-au-navy lg:text-right" href="#bundy-etl">View details <i class="fa-solid fa-arrow-right ml-1" aria-hidden="true"></i></a>
                     </div>
 
                     <div id="qr-attendance" class="grid gap-4 px-5 py-4 lg:grid-cols-[minmax(14rem,1.5fr)_minmax(12rem,1fr)_auto_minmax(8rem,.8fr)_auto] lg:items-center lg:px-6" data-health-row>
                         <div class="flex items-center gap-3">
-                            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-cyan-50 text-xs font-extrabold text-cyan-700">QR</span>
+                            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-cyan-50 text-cyan-700"><i class="fa-solid fa-qrcode h-4 w-4" aria-hidden="true"></i></span>
                             <div class="min-w-0">
                                 <p class="text-sm font-extrabold text-slate-700">QR Attendance</p>
                                 <p class="mt-0.5 text-xs font-medium text-slate-400">Additional attendance source</p>
@@ -222,12 +186,12 @@
                         <div class="text-xs font-medium text-slate-500"><span class="mb-1 block text-[10px] font-bold uppercase tracking-[0.1em] text-slate-400 lg:hidden">Purpose</span>Additional Attendance Source</div>
                         <div><span class="mb-1 block text-[10px] font-bold uppercase tracking-[0.1em] text-slate-400 lg:hidden">Status</span><span class="status-badge status-online"><span class="status-dot status-dot-online"></span>Online</span></div>
                         <div class="text-xs font-semibold text-slate-600"><span class="mb-1 block text-[10px] font-bold uppercase tracking-[0.1em] text-slate-400 lg:hidden">Last sync</span>Live</div>
-                        <a class="text-xs font-bold text-au-blue transition hover:text-au-navy lg:text-right" href="#qr-attendance">View details <span aria-hidden="true">→</span></a>
+                        <a class="text-xs font-bold text-au-blue transition hover:text-au-navy lg:text-right" href="#qr-attendance">View details <i class="fa-solid fa-arrow-right ml-1" aria-hidden="true"></i></a>
                     </div>
 
                     <div class="grid gap-4 px-5 py-4 lg:grid-cols-[minmax(14rem,1.5fr)_minmax(12rem,1fr)_auto_minmax(8rem,.8fr)_auto] lg:items-center lg:px-6" data-health-row data-section="unified-attendance">
                         <div class="flex items-center gap-3">
-                            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-emerald-50 text-xs font-extrabold text-emerald-600">UA</span>
+                            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-emerald-50 text-emerald-600"><i class="fa-solid fa-layer-group h-4 w-4" aria-hidden="true"></i></span>
                             <div class="min-w-0">
                                 <p class="text-sm font-extrabold text-slate-700">Unified Attendance</p>
                                 <p class="mt-0.5 text-xs font-medium text-slate-400">Standardized internal attendance data</p>
@@ -236,12 +200,12 @@
                         <div class="text-xs font-medium text-slate-500"><span class="mb-1 block text-[10px] font-bold uppercase tracking-[0.1em] text-slate-400 lg:hidden">Purpose</span>Standardized Attendance Records</div>
                         <div><span class="mb-1 block text-[10px] font-bold uppercase tracking-[0.1em] text-slate-400 lg:hidden">Status</span><span class="status-badge status-online"><span class="status-dot status-dot-online"></span>Online</span></div>
                         <div class="text-xs font-semibold text-slate-600"><span class="mb-1 block text-[10px] font-bold uppercase tracking-[0.1em] text-slate-400 lg:hidden">Last sync</span>1 minute ago</div>
-                        <a class="text-xs font-bold text-au-blue transition hover:text-au-navy lg:text-right" href="#unified-attendance">View details <span aria-hidden="true">→</span></a>
+                        <a class="text-xs font-bold text-au-blue transition hover:text-au-navy lg:text-right" href="#unified-attendance">View details <i class="fa-solid fa-arrow-right ml-1" aria-hidden="true"></i></a>
                     </div>
 
                     <div id="payroll-integration" class="grid gap-4 bg-amber-50/30 px-5 py-4 lg:grid-cols-[minmax(14rem,1.5fr)_minmax(12rem,1fr)_auto_minmax(8rem,.8fr)_auto] lg:items-center lg:px-6" data-health-row>
                         <div class="flex items-center gap-3">
-                            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-amber-50 text-xs font-extrabold text-amber-700">PY</span>
+                            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-amber-50 text-amber-700"><i class="fa-solid fa-money-check-dollar h-4 w-4" aria-hidden="true"></i></span>
                             <div class="min-w-0">
                                 <p class="text-sm font-extrabold text-slate-700">Existing Payroll System</p>
                                 <p class="mt-0.5 text-xs font-medium text-slate-400">External downstream system</p>
@@ -250,12 +214,12 @@
                         <div class="text-xs font-medium text-slate-500"><span class="mb-1 block text-[10px] font-bold uppercase tracking-[0.1em] text-slate-400 lg:hidden">Purpose</span>Verified Attendance Transfer</div>
                         <div><span class="mb-1 block text-[10px] font-bold uppercase tracking-[0.1em] text-slate-400 lg:hidden">Status</span><span class="status-badge status-warning"><span class="status-dot status-dot-warning"></span>Warning</span></div>
                         <div class="text-xs font-semibold text-slate-600"><span class="mb-1 block text-[10px] font-bold uppercase tracking-[0.1em] text-slate-400 lg:hidden">Last sync</span>18 minutes ago</div>
-                        <a class="text-xs font-bold text-au-blue transition hover:text-au-navy lg:text-right" href="#payroll-integration">View details <span aria-hidden="true">→</span></a>
+                        <a class="text-xs font-bold text-au-blue transition hover:text-au-navy lg:text-right" href="#payroll-integration">View details <i class="fa-solid fa-arrow-right ml-1" aria-hidden="true"></i></a>
                     </div>
 
                     <div id="accounting-integration" class="grid gap-4 px-5 py-4 lg:grid-cols-[minmax(14rem,1.5fr)_minmax(12rem,1fr)_auto_minmax(8rem,.8fr)_auto] lg:items-center lg:px-6" data-health-row>
                         <div class="flex items-center gap-3">
-                            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-sky-50 text-xs font-extrabold text-sky-700">AC</span>
+                            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-sky-50 text-sky-700"><i class="fa-solid fa-building-columns h-4 w-4" aria-hidden="true"></i></span>
                             <div class="min-w-0">
                                 <p class="text-sm font-extrabold text-slate-700">Existing Accounting System</p>
                                 <p class="mt-0.5 text-xs font-medium text-slate-400">External downstream system</p>
@@ -264,7 +228,7 @@
                         <div class="text-xs font-medium text-slate-500"><span class="mb-1 block text-[10px] font-bold uppercase tracking-[0.1em] text-slate-400 lg:hidden">Purpose</span>Approved Payroll Synchronization</div>
                         <div><span class="mb-1 block text-[10px] font-bold uppercase tracking-[0.1em] text-slate-400 lg:hidden">Status</span><span class="status-badge status-online"><span class="status-dot status-dot-online"></span>Online</span></div>
                         <div class="text-xs font-semibold text-slate-600"><span class="mb-1 block text-[10px] font-bold uppercase tracking-[0.1em] text-slate-400 lg:hidden">Last sync</span>12 minutes ago</div>
-                        <a class="text-xs font-bold text-au-blue transition hover:text-au-navy lg:text-right" href="#accounting-integration">View details <span aria-hidden="true">→</span></a>
+                        <a class="text-xs font-bold text-au-blue transition hover:text-au-navy lg:text-right" href="#accounting-integration">View details <i class="fa-solid fa-arrow-right ml-1" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </section>
@@ -286,76 +250,65 @@
                                 <p class="mb-2 text-[10px] font-bold uppercase tracking-[0.12em] text-slate-400">Attendance inputs</p>
                                 <div class="grid gap-2 sm:grid-cols-3 lg:grid-cols-1">
                                     <div class="flow-source">
-                                        <span class="flow-icon bg-blue-50 text-au-blue">HR</span>
+                                        <span class="flow-icon bg-blue-50 text-au-blue"><i class="fa-solid fa-building" aria-hidden="true"></i></span>
                                         <span><strong>HRPS</strong><small>Employee data</small></span>
                                     </div>
                                     <div class="flow-source">
-                                        <span class="flow-icon bg-violet-50 text-violet-600">BE</span>
+                                        <span class="flow-icon bg-violet-50 text-violet-600"><i class="fa-solid fa-clock" aria-hidden="true"></i></span>
                                         <span><strong>Bundy</strong><small>Device logs</small></span>
                                     </div>
                                     <div class="flow-source">
-                                        <span class="flow-icon bg-cyan-50 text-cyan-700">QR</span>
+                                        <span class="flow-icon bg-cyan-50 text-cyan-700"><i class="fa-solid fa-qrcode" aria-hidden="true"></i></span>
                                         <span><strong>QR Attendance</strong><small>Additional source</small></span>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="flow-arrow" aria-hidden="true">→</div>
+                            <div class="flow-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></div>
 
                             <div class="flow-step">
                                 <span class="flow-step-icon bg-emerald-50 text-emerald-600">
-                                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                        <path d="M4 7.5h16"></path><path d="M4 12h16"></path><path d="M4 16.5h16"></path>
-                                        <circle cx="7" cy="7.5" r="1"></circle><circle cx="7" cy="12" r="1"></circle><circle cx="7" cy="16.5" r="1"></circle>
-                                    </svg>
+                                    <i class="fa-solid fa-layer-group h-5 w-5" aria-hidden="true"></i>
                                 </span>
                                 <strong>Unified Attendance</strong>
                                 <small>Standardize</small>
                             </div>
 
-                            <div class="flow-arrow" aria-hidden="true">→</div>
+                            <div class="flow-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></div>
 
                             <div class="flow-step">
                                 <span class="flow-step-icon bg-amber-50 text-amber-600">
-                                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                        <path d="M12 3.5 21 20H3z"></path><path d="M12 9v4"></path><path d="M12 16.5h.01"></path>
-                                    </svg>
+                                    <i class="fa-solid fa-triangle-exclamation h-5 w-5" aria-hidden="true"></i>
                                 </span>
                                 <strong>Validation</strong>
                                 <small>Review</small>
                             </div>
 
-                            <div class="flow-arrow" aria-hidden="true">→</div>
+                            <div class="flow-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></div>
 
                             <div class="flow-step">
                                 <span class="flow-step-icon bg-blue-50 text-au-blue">
-                                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                        <path d="m5 12 4.5 4.5L19 7"></path><circle cx="12" cy="12" r="9"></circle>
-                                    </svg>
+                                    <i class="fa-solid fa-circle-check h-5 w-5" aria-hidden="true"></i>
                                 </span>
                                 <strong>Verified Attendance</strong>
                                 <small>Payroll-ready</small>
                             </div>
 
-                            <div class="flow-arrow" aria-hidden="true">→</div>
+                            <div class="flow-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></div>
 
                             <div class="flow-step">
                                 <span class="flow-step-icon bg-slate-100 text-slate-600">
-                                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                        <rect x="4" y="5" width="16" height="14" rx="2"></rect><path d="M4 9h16"></path><path d="M8 14h3"></path><path d="M14 14h2"></path>
-                                    </svg>
+                                    <i class="fa-solid fa-money-check-dollar h-5 w-5" aria-hidden="true"></i>
                                 </span>
                                 <strong>Existing Payroll</strong>
                                 <small>Downstream</small>
                             </div>
 
-                            <div class="flow-arrow" aria-hidden="true">→</div>
+                            <div class="flow-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></div>
 
                             <div class="flow-step">
                                 <span class="flow-step-icon bg-sky-50 text-sky-700">
-                                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                        <path d="M5 20V6.5L12 3l7 3.5V20"></path><path d="M3.5 20.5h17"></path><path d="M8.5 10.5h1"></path><path d="M14.5 10.5h1"></path>
-                                    </svg>
+                                    <i class="fa-solid fa-building-columns h-5 w-5" aria-hidden="true"></i>
                                 </span>
                                 <strong>Existing Accounting</strong>
                                 <small>Downstream</small>
@@ -364,9 +317,7 @@
                     </div>
 
                     <div class="mt-5 flex items-center gap-2 rounded-xl border border-blue-100 bg-blue-50/60 px-3 py-2.5 text-[11px] font-medium leading-5 text-blue-800">
-                        <svg class="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <circle cx="12" cy="12" r="9"></circle><path d="M12 10v5"></path><path d="M12 7.5h.01"></path>
-                        </svg>
+                        <i class="fa-solid fa-circle-info h-4 w-4 shrink-0" aria-hidden="true"></i>
                         <span>Existing Payroll and Accounting remain external systems; this dashboard monitors their connection health.</span>
                     </div>
                 </article>
@@ -379,10 +330,7 @@
                             <p class="mt-1 text-xs font-medium leading-5 text-slate-400">Transfer activity across monitored integrations.</p>
                         </div>
                         <span class="grid h-9 w-9 place-items-center rounded-xl bg-emerald-50 text-emerald-600">
-                            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M4 12a8 8 0 0 1 13.7-5.6L20 9"></path><path d="M20 4v5h-5"></path>
-                                <path d="M20 12a8 8 0 0 1-13.7 5.6L4 15"></path><path d="M4 20v-5h5"></path>
-                            </svg>
+                            <i class="fa-solid fa-arrows-rotate h-5 w-5" aria-hidden="true"></i>
                         </span>
                     </div>
 
@@ -427,7 +375,7 @@
                             <p class="section-kicker">Activity stream</p>
                             <h2 id="events-title" class="mt-1 text-base font-extrabold text-au-navy">Recent Integration Events</h2>
                         </div>
-                        <button type="button" class="hidden text-xs font-bold text-au-blue transition hover:text-au-navy sm:inline-flex" data-ui-action="view all integration events">View all events <span class="ml-1" aria-hidden="true">→</span></button>
+                        <button type="button" class="hidden text-xs font-bold text-au-blue transition hover:text-au-navy sm:inline-flex" data-ui-action="view all integration events">View all events <i class="fa-solid fa-arrow-right ml-1" aria-hidden="true"></i></button>
                     </div>
 
                     <div class="overflow-x-auto">
@@ -494,9 +442,7 @@
                         <div class="rounded-xl border border-red-100 bg-red-50/50 p-4">
                             <div class="flex items-start gap-3">
                                 <span class="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-white text-au-red shadow-sm">
-                                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                        <path d="M12 3.5 21 20H3z"></path><path d="M12 9v4"></path><path d="M12 16.5h.01"></path>
-                                    </svg>
+                                    <i class="fa-solid fa-triangle-exclamation h-4 w-4" aria-hidden="true"></i>
                                 </span>
                                 <div class="min-w-0">
                                     <p class="text-xs font-extrabold text-slate-700">Payroll Integration</p>
@@ -515,9 +461,7 @@
                         <div class="rounded-xl border border-amber-100 bg-amber-50/50 p-4">
                             <div class="flex items-start gap-3">
                                 <span class="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-white text-amber-700 shadow-sm">
-                                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                        <path d="M12 3.5 21 20H3z"></path><path d="M12 9v4"></path><path d="M12 16.5h.01"></path>
-                                    </svg>
+                                    <i class="fa-solid fa-triangle-exclamation h-4 w-4" aria-hidden="true"></i>
                                 </span>
                                 <div class="min-w-0">
                                     <p class="text-xs font-extrabold text-slate-700">Bundy / Biometric ETL</p>
@@ -536,9 +480,7 @@
                         <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-4">
                             <div class="flex items-start gap-3">
                                 <span class="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-white text-slate-600 shadow-sm">
-                                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                        <path d="M4 5.5h16v13H4z"></path><path d="M7.5 15.5v-3"></path><path d="M12 15.5v-6"></path><path d="M16.5 15.5v-4.5"></path>
-                                    </svg>
+                                    <i class="fa-solid fa-chart-line h-4 w-4" aria-hidden="true"></i>
                                 </span>
                                 <div class="min-w-0">
                                     <p class="text-xs font-extrabold text-slate-700">Integration Layer</p>
@@ -614,45 +556,45 @@
                     <div class="mt-5 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
                         <button type="button" class="quick-action" data-ui-action="monitor integrations">
                             <span class="quick-action-icon bg-blue-50 text-au-blue">
-                                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5h16v13H4z"></path><path d="M7.5 15.5v-3"></path><path d="M12 15.5v-6"></path><path d="M16.5 15.5v-4.5"></path></svg>
+                                <i class="fa-solid fa-chart-line h-4 w-4" aria-hidden="true"></i>
                             </span>
                             <span>Monitor Integrations</span>
-                            <span class="ml-auto text-slate-300" aria-hidden="true">→</span>
+                            <i class="fa-solid fa-arrow-right ml-auto text-slate-300" aria-hidden="true"></i>
                         </button>
                         <button type="button" class="quick-action" data-ui-action="view failed transfers">
                             <span class="quick-action-icon bg-red-50 text-au-red">
-                                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5 21 20H3z"></path><path d="M12 9v4"></path><path d="M12 16.5h.01"></path></svg>
+                                <i class="fa-solid fa-triangle-exclamation h-4 w-4" aria-hidden="true"></i>
                             </span>
                             <span>View Failed Transfers</span>
-                            <span class="ml-auto text-slate-300" aria-hidden="true">→</span>
+                            <i class="fa-solid fa-arrow-right ml-auto text-slate-300" aria-hidden="true"></i>
                         </button>
                         <button type="button" class="quick-action" data-ui-action="manage users">
                             <span class="quick-action-icon bg-violet-50 text-violet-600">
-                                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20v-1.5a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4V20"></path><circle cx="9.5" cy="7" r="3.5"></circle><path d="M16 4.5a3.5 3.5 0 0 1 0 6.8"></path></svg>
+                                <i class="fa-solid fa-users h-4 w-4" aria-hidden="true"></i>
                             </span>
                             <span>Manage Users</span>
-                            <span class="ml-auto text-slate-300" aria-hidden="true">→</span>
+                            <i class="fa-solid fa-arrow-right ml-auto text-slate-300" aria-hidden="true"></i>
                         </button>
                         <button type="button" class="quick-action" data-ui-action="manage roles">
                             <span class="quick-action-icon bg-amber-50 text-amber-600">
-                                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5 19 6v5.5c0 4.2-2.8 7.4-7 9-4.2-1.6-7-4.8-7-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                                <i class="fa-solid fa-user-shield h-4 w-4" aria-hidden="true"></i>
                             </span>
                             <span>Manage Roles</span>
-                            <span class="ml-auto text-slate-300" aria-hidden="true">→</span>
+                            <i class="fa-solid fa-arrow-right ml-auto text-slate-300" aria-hidden="true"></i>
                         </button>
                         <button type="button" class="quick-action" data-ui-action="view audit logs">
                             <span class="quick-action-icon bg-emerald-50 text-emerald-600">
-                                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3.5h9l3 3V20.5H6z"></path><path d="M15 3.5v4h3"></path><path d="M9 12h6"></path><path d="M9 15.5h6"></path></svg>
+                                <i class="fa-solid fa-list-check h-4 w-4" aria-hidden="true"></i>
                             </span>
                             <span>View Audit Logs</span>
-                            <span class="ml-auto text-slate-300" aria-hidden="true">→</span>
+                            <i class="fa-solid fa-arrow-right ml-auto text-slate-300" aria-hidden="true"></i>
                         </button>
                         <button type="button" class="quick-action" data-ui-action="open system settings">
                             <span class="quick-action-icon bg-slate-100 text-slate-600">
-                                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-1.8 1.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5v.2h-2.6v-.2a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.9.3l-.1.1-1.8-1.8.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H6.3v-2.6h.2a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1 1.8-1.8.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.5V3.3h2.6v.2a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1 1.8 1.8-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.5 1h.2V12h-.2a1.7 1.7 0 0 0-1.5 1Z"></path></svg>
+                                <i class="fa-solid fa-gear h-4 w-4" aria-hidden="true"></i>
                             </span>
                             <span>System Settings</span>
-                            <span class="ml-auto text-slate-300" aria-hidden="true">→</span>
+                            <i class="fa-solid fa-arrow-right ml-auto text-slate-300" aria-hidden="true"></i>
                         </button>
                     </div>
                 </article>
@@ -664,16 +606,14 @@
                             <h2 id="audit-title" class="mt-1 text-base font-extrabold text-au-navy">Recent Audit Activity</h2>
                         </div>
                         <span class="grid h-9 w-9 place-items-center rounded-xl bg-slate-100 text-slate-600">
-                            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M6 3.5h9l3 3V20.5H6z"></path><path d="M15 3.5v4h3"></path><path d="M9 12h6"></path><path d="M9 15.5h6"></path>
-                            </svg>
+                            <i class="fa-solid fa-list-check h-5 w-5" aria-hidden="true"></i>
                         </span>
                     </div>
 
                     <div class="mt-5 space-y-4">
                         <div class="flex gap-3">
                             <span class="activity-dot bg-blue-100 text-au-blue">
-                                <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"></path><path d="m7 14 5 5 5-5"></path></svg>
+                                <i class="fa-solid fa-arrow-down h-3.5 w-3.5" aria-hidden="true"></i>
                             </span>
                             <div class="min-w-0 flex-1">
                                 <p class="text-xs font-semibold leading-5 text-slate-600">Administrator retried Payroll synchronization.</p>
@@ -682,7 +622,7 @@
                         </div>
                         <div class="flex gap-3">
                             <span class="activity-dot bg-amber-100 text-amber-700">
-                                <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5v17"></path><path d="M5 9.5h14"></path><path d="M5 14.5h14"></path></svg>
+                                <i class="fa-solid fa-user-shield h-3.5 w-3.5" aria-hidden="true"></i>
                             </span>
                             <div class="min-w-0 flex-1">
                                 <p class="text-xs font-semibold leading-5 text-slate-600">Role permission updated for Attendance Staff.</p>
@@ -691,7 +631,7 @@
                         </div>
                         <div class="flex gap-3">
                             <span class="activity-dot bg-violet-100 text-violet-700">
-                                <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7v5l3.5 2"></path></svg>
+                                <i class="fa-solid fa-clock h-3.5 w-3.5" aria-hidden="true"></i>
                             </span>
                             <div class="min-w-0 flex-1">
                                 <p class="text-xs font-semibold leading-5 text-slate-600">Bundy ETL completed with 326 records.</p>
@@ -700,7 +640,7 @@
                         </div>
                         <div class="flex gap-3">
                             <span class="activity-dot bg-emerald-100 text-emerald-700">
-                                <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4.5 4.5L19 7"></path></svg>
+                                <i class="fa-solid fa-circle-check h-3.5 w-3.5" aria-hidden="true"></i>
                             </span>
                             <div class="min-w-0 flex-1">
                                 <p class="text-xs font-semibold leading-5 text-slate-600">User account activated.</p>

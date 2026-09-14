@@ -1,82 +1,24 @@
-const icon = (content) => [
-    '<svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">',
-    content,
-    '</svg>'
+const icon = (className, extraClass = 'h-5 w-5') => [
+    '<i class="', className, ' ', extraClass, ' inline-flex shrink-0 items-center justify-center text-center" aria-hidden="true"></i>'
 ].join('');
 
 const icons = {
-    dashboard: icon(
-        '<rect x="3" y="3" width="7" height="7" rx="1.5"></rect>' +
-        '<rect x="14" y="3" width="7" height="7" rx="1.5"></rect>' +
-        '<rect x="3" y="14" width="7" height="7" rx="1.5"></rect>' +
-        '<rect x="14" y="14" width="7" height="7" rx="1.5"></rect>'
-    ),
-    monitoring: icon(
-        '<path d="M4 5.5h16v13H4z"></path>' +
-        '<path d="M7.5 15.5v-3"></path>' +
-        '<path d="M12 15.5v-6"></path>' +
-        '<path d="M16.5 15.5v-4.5"></path>'
-    ),
-    hrps: icon(
-        '<path d="M4 20.5h16"></path>' +
-        '<path d="M6 20.5V8.5h12v12"></path>' +
-        '<path d="M8.5 8.5V5.5h7v3"></path>' +
-        '<path d="M9 12h1"></path><path d="M14 12h1"></path>' +
-        '<path d="M9 15.5h1"></path><path d="M14 15.5h1"></path>'
-    ),
-    bundy: icon(
-        '<circle cx="12" cy="12" r="8.5"></circle>' +
-        '<path d="M12 7v5l3.5 2"></path>' +
-        '<path d="M7.5 4.5 6 3"></path><path d="M16.5 4.5 18 3"></path>'
-    ),
-    qr: icon(
-        '<path d="M4 4h6v6H4z"></path>' +
-        '<path d="M14 4h6v6h-6z"></path>' +
-        '<path d="M4 14h6v6H4z"></path>' +
-        '<path d="M14 14h2v2h-2z"></path>' +
-        '<path d="M18 14h2v2h-2z"></path>' +
-        '<path d="M14 18h2v2h-2z"></path>' +
-        '<path d="M18 18h2v2h-2z"></path>'
-    ),
-    unified: icon(
-        '<path d="M4 7.5h16"></path><path d="M4 12h16"></path><path d="M4 16.5h16"></path>' +
-        '<circle cx="7" cy="7.5" r="1"></circle><circle cx="7" cy="12" r="1"></circle><circle cx="7" cy="16.5" r="1"></circle>'
-    ),
-    payroll: icon(
-        '<rect x="3.5" y="5" width="17" height="14" rx="2"></rect>' +
-        '<path d="M3.5 9h17"></path><path d="M7 14h3"></path><path d="M14 14h3"></path>'
-    ),
-    accounting: icon(
-        '<path d="M5 20V6.5L12 3l7 3.5V20"></path>' +
-        '<path d="M3.5 20.5h17"></path><path d="M8.5 10.5h1"></path>' +
-        '<path d="M14.5 10.5h1"></path><path d="M8.5 14.5h1"></path><path d="M14.5 14.5h1"></path>'
-    ),
-    errors: icon(
-        '<path d="M12 3.5 21 20H3z"></path>' +
-        '<path d="M12 9v4"></path><path d="M12 16.5h.01"></path>'
-    ),
-    users: icon(
-        '<path d="M16 20v-1.5a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4V20"></path>' +
-        '<circle cx="9.5" cy="7" r="3.5"></circle>' +
-        '<path d="M16 4.5a3.5 3.5 0 0 1 0 6.8"></path>' +
-        '<path d="M21 20v-1.5a4 4 0 0 0-3-3.85"></path>'
-    ),
-    roles: icon(
-        '<path d="M12 3.5 19 6v5.5c0 4.2-2.8 7.4-7 9-4.2-1.6-7-4.8-7-9V6z"></path>' +
-        '<path d="m9 12 2 2 4-4"></path>'
-    ),
-    audit: icon(
-        '<path d="M6 3.5h9l3 3V20.5H6z"></path>' +
-        '<path d="M15 3.5v4h3"></path><path d="M9 12h6"></path>' +
-        '<path d="M9 15.5h6"></path>'
-    ),
-    settings: icon(
-        '<path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"></path>' +
-        '<path d="m19.4 15 .1.1a1.8 1.8 0 0 1-2.5 2.5l-.1-.1a1.8 1.8 0 0 0-3.1 1.3v.2a1.8 1.8 0 0 1-3.6 0v-.2a1.8 1.8 0 0 0-3.1-1.3l-.1.1a1.8 1.8 0 1 1-2.5-2.5l.1-.1A1.8 1.8 0 0 0 4.3 12a1.8 1.8 0 0 0-1.3-3.1h-.2a1.8 1.8 0 0 1 0-3.6H3A1.8 1.8 0 0 0 4.3 2.2l-.1-.1a1.8 1.8 0 1 1 2.5-2.5l.1.1A1.8 1.8 0 0 0 9.9 0a1.8 1.8 0 0 0 3.6 0v-.2a1.8 1.8 0 0 1 3.6 0V0a1.8 1.8 0 0 0 3.1 1.3l.1-.1a1.8 1.8 0 1 1 2.5 2.5l-.1.1A1.8 1.8 0 0 0 23.9 7h.2a1.8 1.8 0 0 1 0 3.6h-.2a1.8 1.8 0 0 0-1.3 3.1Z" transform="scale(.78) translate(3.4 3.4)"></path>'
-    ),
-    close: icon('<path d="m6 6 12 12"></path><path d="m18 6-12 12"></path>'),
-    logout: icon('<path d="M10 5H6.5A1.5 1.5 0 0 0 5 6.5v11A1.5 1.5 0 0 0 6.5 19H10"></path><path d="M14 8l4 4-4 4"></path><path d="M18 12H9"></path>'),
-    user: icon('<circle cx="12" cy="8" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path>')
+    dashboard: icon('fa-solid fa-table-columns'),
+    monitoring: icon('fa-solid fa-chart-line'),
+    hrps: icon('fa-solid fa-building'),
+    bundy: icon('fa-solid fa-clock'),
+    qr: icon('fa-solid fa-qrcode'),
+    unified: icon('fa-solid fa-layer-group'),
+    payroll: icon('fa-solid fa-money-check-dollar'),
+    accounting: icon('fa-solid fa-building-columns'),
+    errors: icon('fa-solid fa-triangle-exclamation'),
+    users: icon('fa-solid fa-users'),
+    roles: icon('fa-solid fa-user-shield'),
+    audit: icon('fa-solid fa-list-check'),
+    settings: icon('fa-solid fa-gear'),
+    close: icon('fa-solid fa-xmark', 'h-4 w-4'),
+    logout: icon('fa-solid fa-right-from-bracket'),
+    user: icon('fa-solid fa-user')
 };
 
 const navigationItems = [

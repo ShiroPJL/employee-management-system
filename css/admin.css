@@ -421,3 +421,62 @@ button:disabled {
         transition-duration: 0.01ms !important;
     }
 }
+
+input[type="search"] {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.icon-tile > i,
+.flow-icon > i,
+.flow-step-icon > i,
+.quick-action-icon > i,
+.activity-dot > i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.icon-tile > i {
+    font-size: 1rem;
+}
+
+.flow-icon > i {
+    font-size: 0.8rem;
+}
+
+.flow-step-icon > i {
+    font-size: 1rem;
+}
+
+.quick-action-icon > i,
+.activity-dot > i {
+    font-size: 0.8rem;
+}
+
+@media (max-width: 1279px) {
+    [data-search-shell].is-mobile-open {
+        position: absolute;
+        top: calc(100% + 0.5rem);
+        right: 0.75rem;
+        left: 0.75rem;
+        z-index: 40;
+        display: flex;
+        align-items: center;
+        border: 1px solid #e4e9f2;
+        border-radius: 0.75rem;
+        background: #ffffff;
+        padding: 0.5rem;
+        box-shadow: 0 16px 30px rgba(15, 35, 80, 0.12);
+    }
+
+    [data-search-shell].is-mobile-open > label {
+        max-width: none;
+    }
+}

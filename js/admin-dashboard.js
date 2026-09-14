@@ -19,6 +19,35 @@ const sidebarCloseButtons = document.querySelectorAll('[data-sidebar-close]');
 const profileButton = document.querySelector('[data-profile-button]');
 const profileMenu = document.querySelector('[data-profile-menu]');
 const statusLastChecked = document.getElementById('status-last-checked');
+const globalSearch = document.getElementById('global-search');
+const searchShell = document.querySelector('[data-search-shell]');
+const searchTriggers = document.querySelectorAll('[data-search-trigger]');
+
+function setSearchOpen(isOpen) {
+    if (searchShell) {
+        searchShell.classList.toggle('is-mobile-open', isOpen);
+    }
+
+    searchTriggers.forEach((trigger) => {
+        trigger.setAttribute('aria-expanded', String(isOpen));
+    });
+}
+
+function focusGlobalSearch() {
+    if (!globalSearch) {
+        return;
+    }
+    if (searchShell && window.matchMedia('(max-width: 1279px)').matches) {
+        setSearchOpen(true);
+    }
+
+    globalSearch.focus();
+    globalSearch.select();
+}
+
+searchTriggers.forEach((trigger) => {
+    trigger.addEventListener('click', focusGlobalSearch);
+});
 
 function announce(message) {
     if (statusLastChecked) {
@@ -93,9 +122,16 @@ if (profileButton && profileMenu) {
 }
 
 document.addEventListener('keydown', (event) => {
+    if (globalSearch && (event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
+        event.preventDefault();
+        focusGlobalSearch();
+        return;
+    }
+
     if (event.key === 'Escape') {
         setSidebarOpen(false);
         setProfileOpen(false);
+        setSearchOpen(false);
     }
 });
 

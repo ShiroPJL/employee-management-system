@@ -1,24 +1,23 @@
-const icon = (content, extraClass = 'h-5 w-5') => [
-    '<svg class="', extraClass, ' shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">',
-    content,
-    '</svg>'
+const icon = (className, extraClass = 'h-5 w-5') => [
+    '<i class="', className, ' ', extraClass, ' inline-flex shrink-0 items-center justify-center" aria-hidden="true"></i>'
 ].join('');
 
 const icons = {
-    menu: icon('<path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h16"></path>'),
-    search: icon('<circle cx="10.8" cy="10.8" r="6.3"></circle><path d="m16 16 4.2 4.2"></path>', 'h-5 w-5'),
-    bell: icon('<path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path><path d="M10 21h4"></path>'),
-    help: icon('<circle cx="12" cy="12" r="9"></circle><path d="M9.7 9a2.4 2.4 0 1 1 4 1.8c-.9.6-1.7 1.2-1.7 2.7"></path><path d="M12 17h.01"></path>'),
-    user: icon('<circle cx="12" cy="8" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path>', 'h-5 w-5'),
-    chevron: icon('<path d="m7 10 5 5 5-5"></path>', 'h-4 w-4'),
-    settings: icon('<circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-1.8 1.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5v.2h-2.6v-.2a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.9.3l-.1.1-1.8-1.8.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H6.3v-2.6h.2a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1 1.8-1.8.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.5V3.3h2.6v.2a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1 1.8 1.8-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.5 1h.2V12h-.2a1.7 1.7 0 0 0-1.5 1Z"></path>'),
-    logout: icon('<path d="M10 5H6.5A1.5 1.5 0 0 0 5 6.5v11A1.5 1.5 0 0 0 6.5 19H10"></path><path d="m14 8 4 4-4 4"></path><path d="M18 12H9"></path>', 'h-5 w-5')
+    menu: icon('fa-solid fa-bars'),
+    search: icon('fa-solid fa-magnifying-glass'),
+    searchField: icon('fa-solid fa-magnifying-glass', 'pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2'),
+    bell: icon('fa-solid fa-bell'),
+    help: icon('fa-regular fa-circle-question'),
+    user: icon('fa-solid fa-user'),
+    chevron: icon('fa-solid fa-chevron-down', 'h-4 w-4'),
+    settings: icon('fa-solid fa-gear'),
+    logout: icon('fa-solid fa-right-from-bracket')
 };
 
 export function Navbar() {
     return [
         '<header id="admin-navbar" class="sticky top-0 z-30 border-b border-slate-200/80 bg-white/95 backdrop-blur" aria-label="Dashboard header">',
-            '<div class="mx-auto flex min-h-[4.75rem] max-w-[1600px] min-w-0 items-center gap-2 px-4 py-3 sm:gap-3 sm:px-6 lg:px-8">',
+            '<div class="relative mx-auto flex min-h-[4.75rem] max-w-[1600px] min-w-0 items-center gap-2 px-4 py-3 sm:gap-3 sm:px-6 lg:px-8">',
                 '<button type="button" class="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:border-slate-300 hover:text-au-navy lg:hidden" data-sidebar-open aria-controls="admin-sidebar" aria-expanded="false" aria-label="Open navigation menu">',
                     icons.menu,
                 '</button>',
@@ -26,12 +25,12 @@ export function Navbar() {
                     '<p class="truncate text-sm font-bold text-au-navy sm:text-base">IT Administrator Dashboard</p>',
                     '<p class="mt-0.5 hidden truncate text-[11px] font-medium text-slate-500 sm:block">Integration control center</p>',
                 '</div>',
-                '<div class="hidden min-w-0 flex-1 items-center justify-end gap-3 xl:flex">',
-                    '<label class="relative min-w-0 max-w-[22rem] flex-1">',
+                '<div class="hidden min-w-0 flex-1 items-center justify-end gap-3 xl:flex" data-search-shell>',
+                    '<label class="relative min-w-0 w-full max-w-[22rem] flex-1">',
                         '<span class="sr-only">Search dashboard</span>',
-                        icons.search,
-                        '<input id="global-search" type="search" placeholder="Search dashboard" class="h-10 w-full rounded-xl border border-slate-200 bg-slate-50 pl-10 pr-12 text-xs font-medium text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-blue-300 focus:bg-white focus:ring-4 focus:ring-blue-100" />',
-                        '<span class="pointer-events-none absolute right-3 top-1/2 hidden -translate-y-1/2 rounded-md border border-slate-200 bg-white px-1.5 py-0.5 text-[9px] font-bold text-slate-400 xl:block">⌘ K</span>',
+                        icons.searchField,
+                        '<input id="global-search" type="search" placeholder="Search dashboard" aria-label="Search dashboard" aria-keyshortcuts="Control+K Meta+K" class="h-11 min-w-0 w-full rounded-xl border border-slate-200 bg-slate-50 pl-11 pr-16 text-xs font-medium text-slate-700 outline-none transition placeholder:text-slate-400 hover:border-slate-300 focus:border-blue-300 focus:bg-white focus:ring-4 focus:ring-blue-100" />',
+                        '<span class="pointer-events-none absolute right-3 top-1/2 hidden -translate-y-1/2 rounded-md border border-slate-200 bg-white px-1.5 py-0.5 text-[9px] font-bold text-slate-400 2xl:block" aria-hidden="true">Ctrl K</span>',
                     '</label>',
                     '<div class="hidden items-center gap-2 rounded-xl border border-emerald-100 bg-emerald-50 px-3 py-2 2xl:flex">',
                         '<span class="status-dot status-dot-online"></span>',
@@ -40,7 +39,7 @@ export function Navbar() {
                     '</div>',
                 '</div>',
                 '<div class="flex shrink-0 items-center gap-1.5 sm:gap-2">',
-                    '<button type="button" class="grid h-10 w-10 shrink-0 place-items-center rounded-xl text-slate-500 transition hover:bg-slate-100 hover:text-au-navy xl:hidden" data-ui-action="open search" aria-label="Search dashboard">',
+                    '<button type="button" class="grid h-10 w-10 shrink-0 place-items-center rounded-xl text-slate-500 transition hover:bg-slate-100 hover:text-au-navy xl:hidden" data-search-trigger aria-controls="global-search" aria-expanded="false" aria-label="Search dashboard">',
                         icons.search,
                     '</button>',
                     '<div class="flex items-center gap-1.5 rounded-xl border border-emerald-100 bg-emerald-50 px-2.5 py-2 2xl:hidden">',
