@@ -1,185 +1,99 @@
-# Coding Project Agentic Workflow
+# Employee Management
 
-## What This Is
+An integration-focused employee attendance system for non-teaching administrative and office-support employees of Arellano University – Juan Sumulong Campus.
 
-This is a lightweight, repository-based workflow for working with coding agents.
+## Project Description
 
-Important project knowledge lives in Markdown files inside the repository instead of depending entirely on one AI conversation. This helps when conversations are lost, the agent changes, work moves to another computer, a project resumes after a long break, or another developer continues it.
+This project connects the university's existing employee, attendance, payroll, and accounting systems while adding QR attendance and a unified integration layer. It is designed to reduce manual checking and transfer work without replacing the systems that already own those responsibilities.
 
-Git remains authoritative for exact code revisions. The workflow files preserve human- and agent-readable project meaning.
+```text
+HRPS + Bundy/Biometric + QR Attendance
+→ Unified Attendance Data
+→ Validation and Processing
+→ Approval
+→ Existing Payroll System
+→ Existing Accounting System
+```
 
-## Core Principle
+HRPS remains the source of official employee information, with the HRPS Employee ID intended as the master identifier for matching records.
 
-The repository and workflow files work together:
+## Intended Users
 
-~~~
-user intent
-↓
-project understanding
-↓
-current task
-↓
-relevant process and skills
-↓
-implementation
-↓
-verification and review
-↓
-state or handoff update
-↓
-Git
-~~~
+- Non-Teaching Employees
+- HR / Attendance Staff
+- Supervisors
+- Payroll Staff
+- Accounting Staff
+- IT Administrators
 
-The repository is authoritative for what is actually implemented. Workflows/PROJECT-BRIEF.md is authoritative for user intent, preferences, uncertainty, and desired direction.
+## Confirmed Scope
 
-## New Project Usage
+- Standardize Bundy and QR attendance into a common attendance format.
+- Detect invalid, duplicate, missing, or inconsistent attendance records.
+- Support attendance validation, correction, approval, and verified attendance output.
+- Provide payroll-ready attendance data for the existing Payroll System.
+- Exchange approved payroll information with the existing Accounting System.
+- Monitor integrations, synchronization, errors, permissions, users, and audit activity.
 
-1. Copy or install this workflow into the repository.
-2. Write the raw project idea in Workflows/PROJECT-BRIEF.md.
-3. Use Workflows/prompts/initialize-project.md.
-4. Let the coding agent inspect the actual repository and the brief.
-5. Populate confirmed knowledge in PROJECT.md and the current condition in STATE.md.
-6. Create initial tasks and justified decision records only when real information supports them.
-7. Continue development through the active task, relevant process, relevant skills, verification, and state updates.
+The project remains integration-first: the existing HRPS, Bundy/Biometric, Payroll, and Accounting systems stay in place.
 
-The user does not need to fill every workflow file before development begins.
+## Current Prototype
 
-## Existing Project Usage
+The repository currently contains a static IT Administrator integration dashboard with:
 
-For an existing repository:
+- Integration health and synchronization summaries.
+- Attendance Data Flow and Unified Attendance monitoring.
+- Recent integration events and integration errors.
+- Quick actions, audit activity, and UI-only feedback states.
+- Reusable sidebar and navbar components with responsive behavior.
 
-~~~
-existing repository + user goals
-↓
-agent inspects the code and documentation
-↓
-confirmed PROJECT.md and current STATE.md
-↓
-tasks and decisions when justified
-↓
-continued development
-~~~
+The dashboard uses mock data and makes no network calls to the external systems.
 
-The brief expresses desired direction; it does not prove that a feature, technology, or architecture exists. Confirm implementation claims from the repository.
+## Technology
 
-## Components
+- HTML, CSS, and browser-native JavaScript ES modules.
+- Tailwind CSS loaded through the CDN.
+- Static hosting or a local HTTP server for the prototype.
+- No backend, database, package manifest, or real integration adapters are currently implemented.
 
-| Component | Responsibility |
-|---|---|
-| Workflows/PROJECT-BRIEF.md | Raw user intent, ideas, preferences, uncertainty, and future possibilities |
-| Workflows/PROJECT.md | Structured and relatively stable project understanding |
-| Workflows/RULES.md | Stable rules for coding agents |
-| Workflows/STATE.md | Overall current project condition |
-| Workflows/tasks/ | Specific active, backlog, and completed task records |
-| Workflows/tasks/CURRENT.md | The one specific task currently active |
-| Workflows/context/ | Unfinished-session handoffs and occasional semantic snapshots |
-| Workflows/processes/ | Ordered workflows for common development activities |
-| Workflows/skills/ | Reusable coding abilities and methods |
-| Workflows/decisions/ | Reasoning behind meaningful technical or architectural choices |
-| Workflows/prompts/ | Reusable instructions for initiating workflow actions |
-| Workflows/templates/ | Reusable structures for workflow documents |
+## Project Structure
 
-## Development Lifecycle
+```text
+admin/dashboard.html       # IT Administrator dashboard
+admin/layout/sidebar.js    # Reusable sidebar component
+admin/layout/navbar.js     # Reusable navbar component
+css/admin.css              # Custom dashboard styles
+js/admin-dashboard.js      # Dashboard mounting and interactions
+img/aulogo.png             # Arellano University logo
+```
 
-For a normal change:
+## Run Locally
 
-~~~
-CURRENT.md
-↓
-relevant process
-↓
-relevant skills
-↓
-inspect existing code
-↓
-targeted implementation
-↓
-verification
-↓
-review
-↓
-STATE.md or HANDOFF.md update when needed
-↓
-Git
-~~~
+Serve the repository root with any static HTTP server. For example:
 
-Task lifecycle:
+```sh
+python3 -m http.server 8000
+```
 
-~~~
-tasks/backlog/
-↓
-tasks/CURRENT.md
-↓
-implementation
-↓
-verification
-↓
-tasks/done/
-~~~
+Open http://localhost:8000/admin/dashboard.html in a browser.
 
-If work stops unfinished:
+## Current Limitations
 
-~~~
-CURRENT.md
-↓
-context/HANDOFF.md
-↓
-next session or agent
-~~~
+- Backend persistence and real integrations are not implemented.
+- Attendance rules, approval ownership, QR security behavior, and external identifier mappings still require confirmation.
+- Tailwind CDN loading requires network access during rendering.
+- Automated browser visual tests are not currently available.
 
-## Framework and Project-Specific Files
+## Scope Boundary
 
-Reusable framework-oriented files are:
+This project is an integration system, not a replacement HRPS, Payroll System, Accounting System, Bundy/Biometric system, or complete university ERP. Faculty attendance integration is outside the initial scope unless explicitly approved later.
 
-- AGENTS.md
-- Workflows/RULES.md
-- Workflows/processes/
-- Workflows/skills/
-- Workflows/prompts/
-- Workflows/templates/
+## Data Boundary
 
-Project-specific or evolving files are:
+Production implementation should store and transmit only the minimum necessary employee information. Biometric images/templates, passwords, salary information in QR codes, and unrelated HR data are outside the intended scope.
 
-- Workflows/PROJECT-BRIEF.md
-- Workflows/PROJECT.md
-- Workflows/STATE.md
-- Workflows/tasks/
-- Workflows/context/
-- Workflows/decisions/
+## Status
 
-This is a responsibility boundary, not an inflexible law. Framework files should not be casually changed during ordinary application work, while project-specific files are expected to evolve.
+The current repository state is a static prototype focused on the IT Administrator monitoring experience.
 
-## Selective Context Loading
-
-Load only what the request needs.
-
-For example:
-
-~~~
-feature request
-→ feature process
-→ implement-feature skill
-→ testing skill when needed
-~~~
-
-Do not load the entire Workflows/ directory for every operation. Large collections such as decisions, snapshots, backlog, done, prompts, templates, processes, and skills should be opened only when relevant.
-
-## Session Continuity
-
-Keep these responsibilities separate:
-
-- Workflows/STATE.md — overall current project condition.
-- Workflows/tasks/CURRENT.md — active task.
-- Workflows/context/HANDOFF.md — exact continuation context from unfinished work.
-
-Handoffs should contain a concrete next action. They should not replace Git history, a full task definition, or the project state.
-
-## Working Principles
-
-- Inspect before editing.
-- Preserve existing architecture and functionality unless the task requires a change.
-- Keep changes targeted.
-- Preserve uncertainty instead of inventing facts.
-- Verify behavior proportionately.
-- Review the final diff.
-- Record meaningful decisions, state changes, and handoffs without creating unnecessary documentation overhead.
+Future work depends on confirmed beneficiary interfaces, data formats, attendance policies, and integration contracts.
