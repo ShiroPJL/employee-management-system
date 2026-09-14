@@ -45,7 +45,6 @@ function navigationLink(item) {
         '<a href="', item.href, '" class="sidebar-link', activeClass, '" data-nav-link', currentPage, '>',
         item.icon,
         '<span class="min-w-0 flex-1 truncate">', item.label, '</span>',
-        item.active ? '<span class="h-1.5 w-1.5 rounded-full bg-current" aria-hidden="true"></span>' : '',
         '</a>'
     ].join('');
 }
@@ -59,9 +58,7 @@ export function Sidebar() {
             '<div class="flex min-h-0 flex-1 flex-col">',
                 '<div class="flex items-start justify-between border-b border-white/10 px-5 pb-5 pt-6">',
                     '<a href="#dashboard" class="flex min-w-0 items-center gap-3" aria-label="Arellano University dashboard">',
-                        '<span class="grid h-11 w-11 shrink-0 place-items-center overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-950/10">',
-                            '<img class="h-full w-full object-contain p-1" src="../img/aulogo.png" alt="Arellano University logo" />',
-                        '</span>',
+                        '<img class="h-11 w-11 shrink-0 object-contain" src="../img/aulogo.png" alt="Arellano University logo" />',
                         '<span class="min-w-0">',
                             '<span class="block truncate text-[11px] font-extrabold tracking-[0.16em] text-white">ARELLANO UNIVERSITY</span>',
                             '<span class="mt-1 block text-xs font-medium text-blue-100/70">Juan Sumulong Campus</span>',

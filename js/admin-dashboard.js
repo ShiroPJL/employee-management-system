@@ -20,12 +20,19 @@ const profileButton = document.querySelector('[data-profile-button]');
 const profileMenu = document.querySelector('[data-profile-menu]');
 const statusLastChecked = document.getElementById('status-last-checked');
 const globalSearch = document.getElementById('global-search');
-const searchShell = document.querySelector('[data-search-shell]');
+const normalNavbar = document.querySelector('[data-navbar-normal-content]');
+const mobileSearchMode = document.querySelector('[data-mobile-search-mode]');
+const mobileSearchInput = document.getElementById('mobile-dashboard-search');
+const closeMobileSearchButton = document.getElementById('close-mobile-search');
 const searchTriggers = document.querySelectorAll('[data-search-trigger]');
 
 function setSearchOpen(isOpen) {
-    if (searchShell) {
-        searchShell.classList.toggle('is-mobile-open', isOpen);
+    if (normalNavbar) {
+        normalNavbar.classList.toggle('hidden', isOpen);
+    }
+
+    if (mobileSearchMode) {
+        mobileSearchMode.classList.toggle('hidden', !isOpen);
     }
 
     searchTriggers.forEach((trigger) => {
@@ -33,12 +40,36 @@ function setSearchOpen(isOpen) {
     });
 }
 
+function isCompactSearch() {
+    return window.matchMedia('(max-width: 1279px)').matches;
+}
+
+function openMobileSearch() {
+    setSearchOpen(true);
+
+    if (mobileSearchInput) {
+        mobileSearchInput.focus();
+        mobileSearchInput.select();
+    }
+}
+
+function closeMobileSearch() {
+    if (mobileSearchInput) {
+        mobileSearchInput.value = '';
+        mobileSearchInput.blur();
+    }
+
+    setSearchOpen(false);
+}
+
 function focusGlobalSearch() {
-    if (!globalSearch) {
+    if (isCompactSearch()) {
+        openMobileSearch();
         return;
     }
-    if (searchShell && window.matchMedia('(max-width: 1279px)').matches) {
-        setSearchOpen(true);
+
+    if (!globalSearch) {
+        return;
     }
 
     globalSearch.focus();
@@ -48,6 +79,16 @@ function focusGlobalSearch() {
 searchTriggers.forEach((trigger) => {
     trigger.addEventListener('click', focusGlobalSearch);
 });
+
+if (closeMobileSearchButton) {
+    closeMobileSearchButton.addEventListener('click', () => {
+        closeMobileSearch();
+
+        if (searchTriggers[0]) {
+            searchTriggers[0].focus();
+        }
+    });
+}
 
 function announce(message) {
     if (statusLastChecked) {
@@ -122,7 +163,7 @@ if (profileButton && profileMenu) {
 }
 
 document.addEventListener('keydown', (event) => {
-    if (globalSearch && (event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
+    if ((globalSearch || mobileSearchInput) && (event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
         event.preventDefault();
         focusGlobalSearch();
         return;
@@ -131,7 +172,9 @@ document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
         setSidebarOpen(false);
         setProfileOpen(false);
-        setSearchOpen(false);
+        if (mobileSearchMode && !mobileSearchMode.classList.contains('hidden')) {
+            closeMobileSearch();
+        }
     }
 });
 

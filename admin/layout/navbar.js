@@ -11,13 +11,15 @@ const icons = {
     user: icon('fa-solid fa-user'),
     chevron: icon('fa-solid fa-chevron-down', 'h-4 w-4'),
     settings: icon('fa-solid fa-gear'),
-    logout: icon('fa-solid fa-right-from-bracket')
+    logout: icon('fa-solid fa-right-from-bracket'),
+    closeSearch: icon('fa-solid fa-xmark')
 };
 
 export function Navbar() {
     return [
         '<header id="admin-navbar" class="sticky top-0 z-30 border-b border-slate-200/80 bg-white/95 backdrop-blur" aria-label="Dashboard header">',
             '<div class="relative mx-auto flex min-h-[4.75rem] max-w-[1600px] min-w-0 items-center gap-2 px-4 py-3 sm:gap-3 sm:px-6 lg:px-8">',
+                '<div class="flex min-w-0 flex-1 items-center gap-2 sm:gap-3" data-navbar-normal-content>',
                 '<button type="button" class="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:border-slate-300 hover:text-au-navy lg:hidden" data-sidebar-open aria-controls="admin-sidebar" aria-expanded="false" aria-label="Open navigation menu">',
                     icons.menu,
                 '</button>',
@@ -39,7 +41,7 @@ export function Navbar() {
                     '</div>',
                 '</div>',
                 '<div class="flex shrink-0 items-center gap-1.5 sm:gap-2">',
-                    '<button type="button" class="grid h-10 w-10 shrink-0 place-items-center rounded-xl text-slate-500 transition hover:bg-slate-100 hover:text-au-navy xl:hidden" data-search-trigger aria-controls="global-search" aria-expanded="false" aria-label="Search dashboard">',
+                    '<button type="button" class="grid h-10 w-10 shrink-0 place-items-center rounded-xl text-slate-500 transition hover:bg-slate-100 hover:text-au-navy xl:hidden" data-search-trigger aria-controls="mobile-search-mode" aria-expanded="false" aria-label="Open search">',
                         icons.search,
                     '</button>',
                     '<div class="flex items-center gap-1.5 rounded-xl border border-emerald-100 bg-emerald-50 px-2.5 py-2 2xl:hidden">',
@@ -78,6 +80,19 @@ export function Navbar() {
                                 '<span>Logout</span>',
                             '</button>',
                         '</div>',
+                    '</div>',
+                '</div>',
+                '</div>',
+                '<div id="mobile-search-mode" class="hidden min-w-0 flex-1 items-center" data-mobile-search-mode>',
+                    '<div class="relative min-w-0 flex-1">',
+                        '<label class="block">',
+                            '<span class="sr-only">Search dashboard</span>',
+                            icons.searchField,
+                            '<input id="mobile-dashboard-search" type="search" placeholder="Search dashboard" aria-label="Search dashboard" class="h-10 min-w-0 w-full rounded-xl border border-slate-200 bg-slate-50 pl-11 pr-12 text-xs font-medium text-slate-700 outline-none transition placeholder:text-slate-400 hover:border-slate-300 focus:border-blue-300 focus:bg-white focus:ring-4 focus:ring-blue-100" />',
+                        '</label>',
+                        '<button type="button" id="close-mobile-search" class="absolute right-2 top-1/2 grid h-8 w-8 -translate-y-1/2 place-items-center rounded-lg text-slate-500 transition hover:bg-slate-100 hover:text-au-navy" aria-label="Close search">',
+                            icons.closeSearch,
+                        '</button>',
                     '</div>',
                 '</div>',
             '</div>',
