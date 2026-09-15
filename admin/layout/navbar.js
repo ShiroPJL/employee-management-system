@@ -15,23 +15,28 @@ const icons = {
     closeSearch: icon('fa-solid fa-xmark')
 };
 
-export function Navbar() {
+export function Navbar(options = {}) {
+    const {
+        title = 'IT Administrator Dashboard',
+        subtitle = 'Integration control center'
+    } = options;
+
     return [
-        '<header id="admin-navbar" class="sticky top-0 z-30 border-b border-slate-200/80 bg-white/95 backdrop-blur" aria-label="Dashboard header">',
+        '<header id="admin-navbar" class="sticky top-0 z-30 border-b border-slate-200/80 bg-white/95 backdrop-blur" aria-label="Administration header">',
             '<div class="relative mx-auto flex min-h-[4.75rem] max-w-[1600px] min-w-0 items-center gap-2 px-4 py-3 sm:gap-3 sm:px-6 lg:px-8">',
                 '<div class="flex min-w-0 flex-1 items-center gap-2 sm:gap-3" data-navbar-normal-content>',
                 '<button type="button" class="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:border-slate-300 hover:text-au-navy lg:hidden" data-sidebar-open aria-controls="admin-sidebar" aria-expanded="false" aria-label="Open navigation menu">',
                     icons.menu,
                 '</button>',
                 '<div class="min-w-0 flex-1 xl:max-w-[18rem] 2xl:max-w-[22rem]">',
-                    '<p class="truncate text-sm font-bold text-au-navy sm:text-base">IT Administrator Dashboard</p>',
-                    '<p class="mt-0.5 hidden truncate text-[11px] font-medium text-slate-500 sm:block">Integration control center</p>',
+                    '<p class="truncate text-sm font-bold text-au-navy sm:text-base">', title, '</p>',
+                    '<p class="mt-0.5 hidden truncate text-[11px] font-medium text-slate-500 sm:block">', subtitle, '</p>',
                 '</div>',
                 '<div class="hidden min-w-0 flex-1 items-center justify-end gap-3 xl:flex" data-search-shell>',
                     '<label class="relative min-w-0 w-full max-w-[22rem] flex-1">',
                         '<span class="sr-only">Search dashboard</span>',
                         icons.searchField,
-                        '<input id="global-search" type="search" placeholder="Search dashboard" aria-label="Search dashboard" aria-keyshortcuts="Control+K Meta+K" class="h-11 min-w-0 w-full rounded-xl border border-slate-200 bg-slate-50 pl-11 pr-16 text-xs font-medium text-slate-700 outline-none transition placeholder:text-slate-400 hover:border-slate-300 focus:border-blue-300 focus:bg-white focus:ring-4 focus:ring-blue-100" />',
+                        '<input id="global-search" type="search" placeholder="Search dashboard" aria-label="Search dashboard" aria-keyshortcuts="Control+K Meta+K" class="h-11 min-w-0 w-full rounded-xl border border-slate-200 bg-slate-50 pl-11 pr-16 text-xs font-medium text-slate-700 outline-none transition placeholder:text-slate-400 hover:border-slate-300 focus:border-blue-300 focus:ring-4 focus:ring-blue-100" />',
                         '<span class="pointer-events-none absolute right-3 top-1/2 hidden -translate-y-1/2 rounded-md border border-slate-200 bg-white px-1.5 py-0.5 text-[9px] font-bold text-slate-400 2xl:block" aria-hidden="true">Ctrl K</span>',
                     '</label>',
                     '<div class="hidden items-center gap-2 rounded-xl border border-emerald-100 bg-emerald-50 px-3 py-2 2xl:flex">',
@@ -88,7 +93,7 @@ export function Navbar() {
                         '<label class="block">',
                             '<span class="sr-only">Search dashboard</span>',
                             icons.searchField,
-                            '<input id="mobile-dashboard-search" type="search" placeholder="Search dashboard" aria-label="Search dashboard" class="h-10 min-w-0 w-full rounded-xl border border-slate-200 bg-slate-50 pl-11 pr-12 text-xs font-medium text-slate-700 outline-none transition placeholder:text-slate-400 hover:border-slate-300 focus:border-blue-300 focus:bg-white focus:ring-4 focus:ring-blue-100" />',
+                            '<input id="mobile-dashboard-search" type="search" placeholder="Search dashboard" aria-label="Search dashboard" class="h-10 min-w-0 w-full rounded-xl border border-slate-200 bg-slate-50 pl-11 pr-12 text-xs font-medium text-slate-700 outline-none transition placeholder:text-slate-400 hover:border-slate-300 focus:border-blue-300 focus:ring-4 focus:ring-blue-100" />',
                         '</label>',
                         '<button type="button" id="close-mobile-search" class="absolute right-2 top-1/2 grid h-8 w-8 -translate-y-1/2 place-items-center rounded-lg text-slate-500 transition hover:bg-slate-100 hover:text-au-navy" aria-label="Close search">',
                             icons.closeSearch,

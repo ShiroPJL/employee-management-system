@@ -22,24 +22,34 @@ const icons = {
 };
 
 const navigationItems = [
-    { label: 'Dashboard', href: '#dashboard', icon: icons.dashboard, active: true },
-    { label: 'Integration Monitoring', href: '#integration-monitoring', icon: icons.monitoring },
-    { label: 'HRPS Integration', href: '#hrps-integration', icon: icons.hrps },
-    { label: 'Bundy / Biometric ETL', href: '#bundy-etl', icon: icons.bundy },
-    { label: 'QR Attendance', href: '#qr-attendance', icon: icons.qr },
-    { label: 'Unified Attendance', href: '#unified-attendance', icon: icons.unified },
-    { label: 'Payroll Integration', href: '#payroll-integration', icon: icons.payroll },
-    { label: 'Accounting Integration', href: '#accounting-integration', icon: icons.accounting },
-    { label: 'Integration Errors', href: '#integration-errors', icon: icons.errors },
-    { label: 'User Accounts', href: '#user-accounts', icon: icons.users },
-    { label: 'Roles & Permissions', href: '#roles-permissions', icon: icons.roles },
-    { label: 'Audit Logs', href: '#audit-logs', icon: icons.audit },
-    { label: 'System Settings', href: '#system-settings', icon: icons.settings }
+    { id: 'dashboard', label: 'Dashboard', href: './dashboard.html', icon: icons.dashboard },
+    { id: 'integration-monitoring', label: 'Integration Monitoring', href: './integration-monitoring.html', icon: icons.monitoring },
+    { id: 'hrps-integration', label: 'HRPS Integration', icon: icons.hrps },
+    { id: 'bundy-etl', label: 'Bundy / Biometric ETL', icon: icons.bundy },
+    { id: 'qr-attendance', label: 'QR Attendance', icon: icons.qr },
+    { id: 'unified-attendance', label: 'Unified Attendance', icon: icons.unified },
+    { id: 'payroll-integration', label: 'Payroll Integration', icon: icons.payroll },
+    { id: 'accounting-integration', label: 'Accounting Integration', icon: icons.accounting },
+    { id: 'integration-errors', label: 'Integration Errors', icon: icons.errors },
+    { id: 'user-accounts', label: 'User Accounts', icon: icons.users },
+    { id: 'roles-permissions', label: 'Roles & Permissions', icon: icons.roles },
+    { id: 'audit-logs', label: 'Audit Logs', icon: icons.audit },
+    { id: 'system-settings', label: 'System Settings', icon: icons.settings }
 ];
 
-function navigationLink(item) {
-    const activeClass = item.active ? ' is-active' : '';
-    const currentPage = item.active ? ' aria-current="page"' : '';
+function navigationItem(item, activePage) {
+    const isActive = item.id === activePage;
+    const activeClass = isActive ? ' is-active' : '';
+    const currentPage = isActive ? ' aria-current="page"' : '';
+
+    if (!item.href) {
+        return [
+            '<span class="sidebar-link sidebar-link-placeholder" aria-disabled="true">',
+            item.icon,
+            '<span class="min-w-0 flex-1 truncate">', item.label, '</span>',
+            '</span>'
+        ].join('');
+    }
 
     return [
         '<a href="', item.href, '" class="sidebar-link', activeClass, '" data-nav-link', currentPage, '>',
@@ -49,15 +59,15 @@ function navigationLink(item) {
     ].join('');
 }
 
-export function Sidebar() {
-    const navigationMarkup = navigationItems.map(navigationLink).join('');
+export function Sidebar(activePage = 'dashboard') {
+    const navigationMarkup = navigationItems.map((item) => navigationItem(item, activePage)).join('');
 
     return [
         '<div id="sidebar-overlay" class="fixed inset-0 z-40 hidden bg-slate-950/60 backdrop-blur-sm lg:hidden" data-sidebar-overlay aria-hidden="true"></div>',
         '<aside id="admin-sidebar" class="sidebar-panel fixed inset-y-0 left-0 z-50 flex w-72 -translate-x-full flex-col bg-au-navy text-white shadow-2xl transition-transform duration-300 ease-out lg:translate-x-0" data-sidebar-panel aria-label="IT Administrator navigation">',
             '<div class="flex min-h-0 flex-1 flex-col">',
                 '<div class="flex items-start justify-between border-b border-white/10 px-5 pb-5 pt-6">',
-                    '<a href="#dashboard" class="flex min-w-0 items-center gap-3" aria-label="Arellano University dashboard">',
+                    '<a href="./dashboard.html" class="flex min-w-0 items-center gap-3" aria-label="Arellano University dashboard">',
                         '<img class="h-11 w-11 shrink-0 object-contain" src="../img/aulogo.png" alt="Arellano University logo" />',
                         '<span class="min-w-0">',
                             '<span class="block truncate text-[11px] font-extrabold tracking-[0.16em] text-white">ARELLANO UNIVERSITY</span>',
