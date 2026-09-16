@@ -26,7 +26,7 @@ const navigationItems = [
     { id: 'integration-monitoring', label: 'Integration Monitoring', href: './integration-monitoring.html', icon: icons.monitoring },
     { id: 'hrps-integration', label: 'HRPS Integration', href: './hrps-integration.html', icon: icons.hrps },
     { id: 'bundy-biometric-etl', label: 'Bundy / Biometric ETL', href: './bundy-biometric-etl.html', icon: icons.bundy },
-    { id: 'qr-attendance', label: 'QR Attendance', icon: icons.qr },
+    { id: 'qr-attendance', label: 'QR Attendance', href: './qr-attendance.html', icon: icons.qr },
     { id: 'unified-attendance', label: 'Unified Attendance', icon: icons.unified },
     { id: 'payroll-integration', label: 'Payroll Integration', icon: icons.payroll },
     { id: 'accounting-integration', label: 'Accounting Integration', icon: icons.accounting },
